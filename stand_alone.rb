@@ -16,6 +16,6 @@ resource 'server', type: 'server' do
   name 'Standalone Basic Server'
   cloud $cloud
   instance_type 'm1.small'
-  securty_groups find('stefhen-sg')
+  security_groups find('stefhen-sg')
   server_template_href '/api/server_templates/336642003'
 end
