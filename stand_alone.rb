@@ -50,5 +50,6 @@ resource "standalone_server", type: "server" do
   datacenter_href map($clouds, $cloud, $datacenter)
   instance_type_href map($clouds, $cloud, $instance_type) 
   security_groups_href map($clouds, $cloud, "security_group")
+  ssh_keys_href map($clouds, $cloud, "ssh_key")
   server_template find("stefhen - Base ServerTemplate for Linux Alpha (v14.0.0)", revision: 0)
 end
