@@ -35,7 +35,7 @@ parameter "datacenter" do
   allowed_values "us-west-2a", "us-east-1a"
 end
 
-parameter "instance type" do
+parameter "instance_type" do
   type "string"
   label "Instance type"
   description "Instance size to use"
@@ -46,7 +46,7 @@ resource "standalone_server", type: "server" do
   name "Standalone Basic Server"
   cloud_href map($clouds, $cloud, "cloud_href")
   datacenter_href map($clouds, $cloud, $datacenter)
-  instance_type_href map($clouds, $cloud, $instance) 
+  instance_type_href map($clouds, $cloud, $instance_type) 
   security_groups_href map($clouds, $cloud, "security_group")
   server_template find("stefhen - Base ServerTemplate for Linux Alpha (v14.0.0)", revision: 0)
 end
