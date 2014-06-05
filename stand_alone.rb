@@ -11,13 +11,15 @@ mapping "clouds" do {
     "us-west-2a"     => "/api/clouds/6/datacenters/BAJJAFGMFRO5G",
     "c1.medium"      => "/api/clouds/6/instance_types/1GFPQQ2KVKM",
     "m1.small"       => "/api/clouds/6/instance_types/1BH7SA9LMLFSV",
-    "security_group" => "/api/clouds/6/security_groups/A68GO1Q5B9GJF" },
+    "security_group" => "/api/clouds/6/security_groups/A68GO1Q5B9GJF",
+    "ssh_key"        => "/api/clouds/6/ssh_keys/EDTM9LCHDNBBL" },
   "EC2 us-east-1" => {
     "cloud_href"     => "/api/clouds/1",
     "us-east-1a"     => "/api/clouds/1/datacenters/ATV0391A7LPF5",
     "c1.medium"      => "/api/clouds/1/instance_types/6U7NRRI3I0UM",
     "m1.small"       => "/api/clouds/1/instance_types/CQQV62T389R32",
-    "security_group" => "/api/clouds/1/security_groups/FJK0P7V5JIJ12" }
+    "security_group" => "/api/clouds/1/security_groups/FJK0P7V5JIJ12",
+    "ssh_key"        => "/api/clouds/1/ssh_keys/13FIKG64LL5SG" }
   }
 end
 
