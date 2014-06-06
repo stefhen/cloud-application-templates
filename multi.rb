@@ -87,8 +87,8 @@ resource "app_array", type: "server_array" do
   ssh_key_href map($clouds, $cloud, "ssh_key")
   server_template_href("/api/server_templates/336642003")
   inputs do {
-    "repo/default/repository" => "https://github.com/rs-services/cookbooks_internal"
-    "repo/default/revision" => join(["text:",$branch]),
+    "repo/default/repository" => "text:https://github.com/rs-services/cookbooks_internal",
+    "repo/default/revision" => join(["text:",$branch])
   } end
 end
 
@@ -97,7 +97,7 @@ operation "provision" do
   description "Launch hosts"
 end
 
-define provision(@load_balancer,@app_array) return @load_balancer, @app_array do
+define provision(@load_balancer,@app_array) return @load_balancer,@app_array do
   concurrent do
     provision(@load_balancer)
     provision(@app_array)
