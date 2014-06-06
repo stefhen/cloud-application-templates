@@ -56,6 +56,7 @@ end
 
 output do
   label "IP Address"
+  category "Networking"
   value @standalone_server.public_ip_address
   description "Public IP Address of server"
 end
