@@ -98,10 +98,16 @@ operation "provision" do
 end
 
 define provision(@load_balancer,@app_array) return @load_balancer,@app_array do
+  @@global_load_balancer = @load_balancer
+  @@global_app_array = @app_array
+
   concurrent do
-    provision(@load_balancer)
-    provision(@app_array)
+    provision(@@global_load_balancer)
+    provision(@@global_app_array)
   end
+
+  @load_balancer = @@global_load_balancer
+  @app_array     = @@global_app_array
 end
 
 output do
