@@ -53,3 +53,9 @@ resource "standalone_server", type: "server" do
   ssh_key_href map($clouds, $cloud, "ssh_key")
   server_template find("stefhen - Base ServerTemplate for Linux Alpha (v14.0.0)", revision: 0)
 end
+
+output do
+  label "IP Address"
+  value @standalone_server.public_ip_address
+  description "Public IP Address of server"
+end
